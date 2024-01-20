@@ -14,11 +14,6 @@ function build_navigation(){
           </a>
         </li>
         .<li class="nav-item">
-          <a class="nav-link" href="#">
-            "Recent"
-          </a>
-        </li>
-        .<li class="nav-item">
           <a class="nav-link" href=$profile_link>
             "Public Profile"
           </a>

@@ -1,0 +1,39 @@
+---
+app: NoCMS
+secret_key: JDE92ID23IJD32K0DJ308JD2
+# Route definitions do NOT support reloading while the server is running
+# But any changes to the file they point to will be automatically loaded
+routes:
+  # Basics
+  /: app/viewcontrollers/index.php
+  /login: app/viewcontrollers/login.php
+  /logout: app/viewcontrollers/logout.php
+  /register: app/viewcontrollers/register.php
+  # Scribe
+  /scribe: app/viewcontrollers/scribe/index.php
+  /scribe/new_post: app/viewcontrollers/scribe/new_post.php
+  /scribe/edit: app/viewcontrollers/scribe/edit.php
+  /scribe/save: app/viewcontrollers/scribe/save.php
+  /scribe/delete: app/viewcontrollers/scribe/remove_post.php
+  /scribe/toggle_vis: app/viewcontrollers/scribe/toggle_vis.php
+  /scribe/change_title: app/viewcontrollers/scribe/change_title.php
+  # Public
+  /manuscripts: app/viewcontrollers/manuscripts.php
+  /others/manuscript: app/viewcontrollers/scribe/public.php
+  /writer: app/viewcontrollers/profile/index.php
+  # Documentation for NoCMS API
+  /api/docs: app/api/index.php
+  # Documentation for NoPHP
+  /docs: docs/pages/index.php
+  /docs/foreword: docs/pages/foreword.php
+  /docs/introduction: docs/pages/introduction.php
+  /docs/getting-started: docs/pages/getting_started.php
+  /docs/spindle: docs/pages/spindle.php
+  /docs/hello-world: docs/pages/hello_world.php
+static:
+  # Serve static files
+  /files/<path:path>: static/
+json:
+  # API
+  /api/getpost: app/api/get_post.php
+  /api/getposts: app/api/get_posts.php

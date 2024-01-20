@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  nophp-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    command: ["python3", "-m", "nophp", "-o=0.0.0.0", "-p=8000", "./config/wool.yaml"]
+
+# To run: docker-compose up --build

@@ -1,0 +1,6 @@
+nophp == 0.1.6
+Flask
+rich
+sly
+pyyaml
+bcrypt

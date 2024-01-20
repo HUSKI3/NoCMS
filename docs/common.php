@@ -113,6 +113,11 @@ function build_navigation(){
               "Hello World"
             </a>
           </li>
+          .<li>
+            <a class="nav-link" href="/docs/number-game">
+              "Number Game"
+            </a>
+          </li>
         </ul>
       </ul>
     </div>

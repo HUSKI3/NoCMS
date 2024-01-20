@@ -30,6 +30,7 @@ routes:
   /docs/getting-started: docs/pages/getting_started.php
   /docs/spindle: docs/pages/spindle.php
   /docs/hello-world: docs/pages/hello_world.php
+  /docs/number-game: docs/pages/number_game.php
 static:
   # Serve static files
   /files/<path:path>: static/

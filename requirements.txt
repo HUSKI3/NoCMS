@@ -1,4 +1,4 @@
-nophp == 0.1.7rc2
+nophp == 0.1.7rc3
 Flask
 rich
 sly

@@ -8,10 +8,12 @@ session_start();
 require_once('app/controllers/post.php');
 $postsController = new PostsController();
 $posts = $postsController->getPublicLatest();
+$posts_num = count($posts);
 
 // Create a user Controller instance
 require_once('app/controllers/user.php');
 $usersController = new UserController();
+
 
 echo 
 <body class=$BODY_PADDING>
@@ -23,9 +25,17 @@ echo
               .<p class="lead"> "An easy to use CMS system for writing blogs and more" </p>
               .<p class="font-weight-bold"> "Hello Wim! You can find documentation for NoPHP over at " . <a href="/docs"> "NoPHP Docs" </a> </p>
               .?</hr class="my-4">
-              //   .<p> "Start Now" </p>
               .<p class="lead">
-                <a class="btn btn-primary btn-lg" href="/scribe" role="button">"Start Now"</a>
+                <a nophp_container=true class="btn btn-primary btn-lg" href="/scribe" role="button">  
+                    // WIP: nophp_container will be able to contain pure nophp code, 
+                    // currently it just allows the interpreter to feedback the echo's value correctly
+                    // from foreach and if expressions
+                    if ($_SESSION['current']['name'] == null) {
+                      echo "Start Now";
+                    } else {
+                      echo "Enter Scribe";
+                    }
+                </a>
               </p>
               .?</br>
               .<h2> "Our communities latest posts:" </h2>
@@ -49,6 +59,11 @@ echo
                       </div>
                   </div>;
                 }
+                .<div>
+                  if ($posts_num == 0) {
+                    echo "No posts. Write yours now!";
+                  }
+                </div>
               </div>
             </div>,
             true

@@ -3,6 +3,7 @@ app: NoCMS
 secret_key: JDE92ID23IJD32K0DJ308JD2
 # Route definitions do NOT support reloading while the server is running
 # But any changes to the file they point to will be automatically loaded
+onstart: app/onstart.php
 routes:
   # Basics
   /: app/viewcontrollers/index.php

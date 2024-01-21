@@ -17,7 +17,7 @@ if ($_SERVER['METHOD'] == 'GET') {
                 <div class="form-group">
                   <label for="emailInput">"Email address"</label>
                   .<input name="email" type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email">null</input>
-                  .<small id="emailHelp" class="form-text text-muted">"We'll never share your email with anyone else."</small>
+                  .<small id="emailHelp" class="form-text text-muted" style="color: #ff5858 !important;"> $_SESSION["events"]["user_error"] </small>
                 </div>
                 .<div class="form-group">
                   <label for="passwordInput">"Password"</label>
@@ -30,6 +30,8 @@ if ($_SERVER['METHOD'] == 'GET') {
         )
     </body>;
     echo $FOOTER;    
+    // Reset events
+    $_SESSION['events'] = null;
 } 
 // TODO: ELSE IF is broken
 if ($_SERVER['METHOD'] == 'POST') {
@@ -40,12 +42,12 @@ if ($_SERVER['METHOD'] == 'POST') {
 
     // User doesnt exist
     if ($user->id == -1) {
-      echo redirect('/login');
+      echo redirect('/login', ["user_error" => "Password is invalid or the user does not exist"]);
       ?die;
     }
     // Check if password is correct
     if( bcrypt_checkpw($_SERVER['form']['password'], $user->password) == false ) {
-      echo redirect('/login');
+      echo redirect('/login', ["user_error" => "Password is invalid or the user does not exist"]);
       ?die;
     }
 

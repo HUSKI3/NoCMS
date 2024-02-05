@@ -1,7 +1,8 @@
 <?php
 
+// JSON encode uses the getters defined for this class
 class Post {
-    private id;
+    public id;
     public cover;
     public title;
     public content;

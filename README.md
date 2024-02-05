@@ -1,8 +1,13 @@
 # NoCMS
 > A simple CMS implementation written in NoPHP
 
-The application will automatically create a database and the tables on startup via
-onstart.php, this behavior is added via `onstart` in `wool.yaml`.
+The application will automatically create a database and the tables on startup via onstart.php, this behavior is added via `onstart` in `wool.yaml`.
+Please note that you will need to create a user account before interacting with the core of the application. Registration works perfectly and will raise an error if a field is not complete.
+
+You can use a precreated account:
+email: susane@noreply.com
+password: suspass
+
 
 Normal routes are defined in `routes` in `wool.yaml`, API routes are defined in `json` in `wool.yaml`, static routes are defined in `static` in `wool.yaml`.
 

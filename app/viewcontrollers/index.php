@@ -15,6 +15,7 @@ require_once('app/controllers/user.php');
 $usersController = new UserController();
 
 
+
 echo 
 <body class=$BODY_PADDING>
     // Use a shared function to center the element
@@ -71,8 +72,4 @@ echo
 </body>;
 
 echo $FOOTER;
-
-// susane@noreply.com
-// suspass
-
 ?>

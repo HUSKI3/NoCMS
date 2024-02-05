@@ -118,7 +118,7 @@ class PostsController {
                 $post[4],
                 $post[5],
                 $post[6]
-            ) // TODO: Make sure this constructor fucking works properly
+            ) // TODO: Make sure this constructor works properly
         );
         }
 
